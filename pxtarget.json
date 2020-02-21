@@ -55,7 +55,9 @@
         "libs/azureiot",
         "libs/settings",
         "libs/settings---files",
-        "libs/robotis-cm-300"
+        "libs/robotis-cm-300",
+        "libs/robotis-cm-300-01",
+        "libs/robotis-cm-300-01-blocks"
     ],
     "serial": {
         "useHF2": true,

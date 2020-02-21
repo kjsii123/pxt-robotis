@@ -6,9 +6,9 @@ namespace basic {
      */
     //% help=basic/print/print
     //% block="#print %num"
-    //% blockId=rcm300_printNum
+    //% blockId=rcm300_printNum2
     //% weight=1 blockGap=8
-    export function printNum(num: number): void {
+    export function printNum2(num: number): void {
         
     }
 
@@ -18,9 +18,9 @@ namespace basic {
      */
     //% help=basic/print/print
     //% block="#print %img (icon UI)"
-    //% blockId=rcm300_printIcon
+    //% blockId=rcm300_printIcon2
     //% weight=1 blockGap=8
-    export function printIcon(img: number): void {
+    export function printIcon2(img: number): void {
         
     }
 
