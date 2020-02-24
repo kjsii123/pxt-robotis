@@ -1,6 +1,5 @@
 #include "pxt.h"
 
-//% color=#5C2D91 weight=1000 icon="\uf205"
 namespace basic {
     /**
      * Print text on LCD

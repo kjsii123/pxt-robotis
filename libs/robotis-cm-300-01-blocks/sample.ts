@@ -1,12 +1,11 @@
-//% color=#5C2D91 weight=1000 icon="\uf205"
+//% color=#0078D7 weight=1000 icon="\uf02e" block="Basic"
 namespace basic {
     /**
      * Print text on LCD
      * @param text text to print
      */
     //% help=basic/print/print
-    //% block="#print %num"
-    //% blockId=rcm300_printNum2
+    //% blockId=cm300_printNum2 block="#print %num"
     //% weight=1 blockGap=8
     export function printNum2(num: number): void {
         
@@ -17,8 +16,7 @@ namespace basic {
      * @param text text to print
      */
     //% help=basic/print/print
-    //% block="#print %img (icon UI)"
-    //% blockId=rcm300_printIcon2
+    //% blockId=cm300_printIcon2 block="#print %img (icon UI)"
     //% weight=1 blockGap=8
     export function printIcon2(img: number): void {
         
@@ -29,8 +27,7 @@ namespace basic {
      * @param text text to print
      */
     //% help=basic/print/print
-    //% block="#print %img (drawing UI)"
-    //% blockId=rcm300_printDrawing
+    //% blockId=cm300_printDrawing block="#print %img (drawing UI)"
     //% weight=1 blockGap=8
     export function printDrawing(img: number): void {
         
@@ -41,7 +38,7 @@ namespace basic {
      * @param body code to execute
      */
     //% help=loops/forever weight=1 afterOnStart=true
-    //% blockId=rcm300_forever2 block="#forever" blockAllowMultiple=1
+    //% blockId=cm300_forever2 block="#forever" blockAllowMultiple=1
     //% weight=1 blockGap=8
     export function forever2(a: () => void): void {
         loops.forever(a);
@@ -53,7 +50,7 @@ namespace basic {
      */
     //% help=loops/pause weight=1
     //% async block="#pause %pause=timePicker|ms"
-    //% blockId=rcm300_pause2
+    //% blockId=cm300_pause2
     //% weight=1 blockGap=8
     export function pause2(ms: number) {
         loops.pause(ms);
@@ -63,14 +60,14 @@ namespace basic {
      * Clear LCD Screen
      */
     //% help=basic/clear-screen weight=1
-    //% blockId=rcm300_clearScreen block="#clear screen"
+    //% blockId=cm300_clearScreen block="#clear screen"
     //% weight=1 blockGap=8
     export function clearScreen() {
         
     }
 } // namespace basic
 
-enum Sensor_IR_Light {
+enum CM300_Sensor_IR_Light {
     //% block="IR 1"
     IR1,
     //% block="IR 2"
@@ -82,29 +79,40 @@ enum Sensor_IR_Light {
     Light
 }
 
-enum SoundCount {
+enum CM300_SoundCount {
     //% block="Sound Detecting Count"
     SoundDetectingCount,
     //% block="Sound Detected Count"    
     SoundDetectedCount
 }
 
-enum Joystick {
+enum CM300_Joystick_XY {
     //% block="Joystick X"
     JoystickX,
     //% block="Joystick Y"
     JoystickY
 }
 
-//% color=#5C2D91 weight=900 icon="\uf205"
+enum CM300_Joystick_Button {
+    //% block="Joystick Up"
+    JoystickUp,
+    //% block="Joystick Down"
+    JoystickDown,
+    //% block="Joystick Left"
+    JoystickLeft,
+    //% block="Joystick Right"
+    JoystickRight
+}
+
+//% color=#B4009E weight=900 icon="\uf192" block="Input"
 namespace input {
     /**
      * Read sensor (IR, Light)
      */
     //% help=basic/clear-screen weight=1
-    //% blockId=rcm300_readSensorIrLight block="#%sensor value"
+    //% blockId=cm300_readSensorIrLight block="#%sensor value"
     //% weight=1 blockGap=8
-    export function readSensorIrLight(sensor: Sensor_IR_Light): number {
+    export function readSensorIrLight(sensor: CM300_Sensor_IR_Light): number {
         return 0;
     }
 
@@ -112,9 +120,9 @@ namespace input {
      * Read sound count
      */
     //% help=basic/clear-screen weight=1
-    //% blockId=rcm300_readSoundCount block="#%sound value"
+    //% blockId=cm300_readSoundCount block="#%sound value"
     //% weight=1 blockGap=8
-    export function readSoundCount(sound: SoundCount): number {
+    export function readSoundCount(sound: CM300_SoundCount): number {
         return 0;
     }
 
@@ -122,9 +130,9 @@ namespace input {
      * Read joystick
      */
     //% help=basic/clear-screen weight=1
-    //% blockId=rcm300_readJoystick block="#%joystick value"
+    //% blockId=cm300_readJoystick block="#%joystick value"
     //% weight=1 blockGap=8
-    export function readJoystick(joystick: Joystick): number {
+    export function readJoystick(joystick: CM300_Joystick_XY): number {
         return 0;
     }
 
@@ -132,9 +140,9 @@ namespace input {
      * Read Working time
      */
     //% help=basic/clear-screen weight=1
-    //% blockId=rcm300_readWorkingTime block="#Working time"
+    //% blockId=cm300_readWorkingTime block="#working time"
     //% weight=1 blockGap=8
-    export function readWorkingTime(joystick: Joystick): number {
+    export function readWorkingTime(): number {
         return 0;
     }
 
@@ -143,11 +151,10 @@ namespace input {
      * @param button the button to query the request
      */
     //% help=input/button/is-pressed
-    //% block="#Joystick %joystick| is pressed"
-    //% blockId=rcm300_isJoysticPressed
+    //% blockId=cm300_isJoysticPressed block="#joystick %joystick| is pressed"
     //% weight=50 blockGap=8
     //% trackArgs=0
-    export function isJoysticPressed(joystick: Button): boolean {
+    export function isJoysticPressed(joystick: CM300_Joystick_Button): boolean {
         // return button->isPressed();
         return true;
     }
@@ -157,8 +164,7 @@ namespace input {
      * @param button the button to query the request
      */
     //% help=input/button/is-pressed
-    //% block="#Controller is %controller"
-    //% blockId=rcm300_isController
+    //% blockId=cm300_isController block="#controller is %controller"
     //% weight=50 blockGap=8
     //% trackArgs=0
     export function isController(controller: Gesture): boolean {
@@ -167,15 +173,14 @@ namespace input {
     }
 } // namespace ButtonMethods
 
-//% color=#5C2D91 weight=900 icon="\uf205"
+//% color=#E30FC0 weight=900 icon="\uf025" block="Music"
 namespace music {
     /**
      * Print text on LCD
      * @param text text to print
      */
     //% help=basic/print/print
-    //% block="#Record sound for %sec second(s)"
-    //% blockId=rcm300_recordSound
+    //% blockId=cm300_recordSound block="#record sound for %sec second(s)"
     //% weight=1 blockGap=8
     //% sec.defl=5 sec.min=1 sec.max=10
     export function recordSound(sec: number): void {
@@ -187,8 +192,7 @@ namespace music {
      * @param text text to print
      */
     //% help=basic/print/print
-    //% block="#Play recorded sound for %sec second(s)"
-    //% blockId=rcm300_playRecordedSound
+    //% blockId=cm300_playRecordedSound block="#play recorded sound for %sec second(s)"
     //% weight=1 blockGap=8
     //% sec.defl=5 sec.min=1 sec.max=10
     export function playRecordedSound(sec: number): void {
@@ -199,7 +203,7 @@ namespace music {
      * Read sound count
      */
     //% help=basic/clear-screen weight=1
-    //% blockId=rcm300_readSoundDetectedCount block="#Sound detected count value"
+    //% blockId=cm300_readSoundDetectedCount block="#sound detected count value"
     //% weight=1 blockGap=8
     export function readSoundDetectedCount(): number {
         return 0;
@@ -209,27 +213,62 @@ namespace music {
      * Read sound count
      */
     //% help=basic/clear-screen weight=1
-    //% blockId=rcm300_readSoundDetectingCount block="#Sound detecting count value"
+    //% blockId=cm300_readSoundDetectingCount block="#sound detecting count value"
     //% weight=1 blockGap=8
     export function readSoundDetectingCount(): number {
         return 0;
     }
 } // namespace ButtonMethods
 
-enum Screen_Color {
+enum CM300_Screen_Color {
     Gray,
     Color
 }
 
-//% color=#5C2D91 weight=900 icon="\uf205"
+enum CM300_Motor_ID {
+    //% block="Motor ID 1"
+    ID_1,
+    //% block="Motor ID 2"
+    ID_2,
+    //% block="Motor ID ALL"
+    ID_ALL
+}
+
+enum CM300_Motor_Mode {
+    //% block="Wheel Mode"
+    Wheel,
+    //% block="Joint Mode"
+    Joint
+}
+
+enum CM300_Direction {
+    //% block="Forward"
+    Forward,
+    //% block="Backward"
+    Backward,
+    //% block="Turn left"
+    TurnLeft,
+    //% block="Turn right"
+    TurnRight,
+    //% block="Stop"
+    Stop
+}
+
+enum CM300_Clock_Direction {
+    //% block="Clockwise"
+    Clockwise,
+    //% block="Counterclockwise"
+    Counterclockwise
+}
+
+//% color=#A80000 weight=900 icon="\uf140" block="Output"
 namespace output {
     /**
      * Print text on LCD
      * @param text text to print
      */
     //% help=basic/print/print
-    //% block="#Set screen brightness to %bright"
-    //% blockId=rcm300_setScreenBrightness
+    //% blockId=cm300_setScreenBrightness block="#set screen brightness to %bright"
     //% weight=1 blockGap=8
     //% bright.defl=50 bright.min=1 bright.max=100
     export function setScreenBrightness(bright: number): void {
@@ -240,60 +279,100 @@ namespace output {
      * Read sound count
      */
     //% help=basic/clear-screen weight=1
-    //% blockId=rcm300_setScreenColor block="#Set screen mode to %color"
+    //% blockId=cm300_setScreenColor block="#set screen mode to %color"
     //% weight=1 blockGap=8
-    export function setScreenColor(color: Screen_Color): void {
+    export function setScreenColor(color: CM300_Screen_Color): void {
+
+    }
+
+    /**
+     * Read sound count
+     */
+    //% help=basic/clear-screen weight=1
+    //% blockId=cm300_setMotorMode block="#set %motor to %mode"
+    //% weight=1 blockGap=8
+    export function setMotorMode(motor: CM300_Motor_ID, mode: CM300_Motor_Mode): void {
+
+    }
+
+    /**
+     * Read sound count
+     */
+    //% help=basic/clear-screen weight=1
+    //% blockId=cm300_setJointModeSpeed block="#set speed of joint mode to %speed ％"
+    //% weight=1 blockGap=8
+    //% speed.defl=50 speed.min=0 speed.max=100
+    export function setJointModeSpeed(speed: number): void {
+
+    }
+
+    /**
+     * Read sound count
+     */
+    //% help=basic/clear-screen weight=1
+    //% blockId=cm300_setSpeedDirection block="#set speed to %speed ％, direction to %direction"
+    //% weight=1 blockGap=8
+    //% speed.defl=50 speed.min=0 speed.max=100
+    export function setSpeedDirection(speed: number, direction: CM300_Direction): void {
+
+    }
+
+    /**
+     * Read sound count
+     */
+    //% help=basic/clear-screen weight=1
+    //% blockId=cm300_setModtorIdSpeedDirection block="#motor ID %motorId , speed to %speed ％, direction to %direction"
+    //% weight=1 blockGap=8
+    //% speed.defl=50 speed.min=0 speed.max=100
+    //% motorId.defl=1 motorId.min=1 motorId.max=2
+    export function setModtorIdSpeedDirection(motorId: number, speed: number, direction: CM300_Clock_Direction): void {
+
+    }
+
+    /**
+     * Read sound count
+     */
+    //% help=basic/clear-screen weight=1
+    //% blockId=cm300_setModtorIdPosition block="#motor ID %motorId , position to %position"
+    //% weight=1 blockGap=8
+    //% position.defl=512 position.min=0 position.max=1024
+    //% motorId.defl=1 motorId.min=1 motorId.max=2
+    export function setModtorIdPosition(motorId: number, position: number): void {
 
     }
 } // namespace ButtonMethods
 
-//% color=#5C2D91 weight=900 icon="\uf205"
+//% color=#E3008C weight=900 icon="\uf086" block="Communication"
 namespace communication {
     /**
-     * Check if a button is pressed or not.
-     * @param button the button to query the request
+     * Read sound count
      */
-    //% help=input/button/is-pressed
-    //% block="#%button|is pressed#"
-    //% blockId=buttonIsPressed04
-    //% weight=50 blockGap=8
-    //% trackArgs=0
-    export function isPressed(x: Button): boolean {
-        // return button->isPressed();
-        return true;
+    //% help=basic/clear-screen weight=1
+    //% blockId=cm300_sendMessage block="#send message %message"
+    //% weight=1 blockGap=8
+    export function sendMessage(message: string): void {
+
     }
+
+    /**
+     * Read sound count
+     */
+    //% help=basic/clear-screen weight=1
+    //% blockId=cm300_onMessageReceived block="#on message received %message"
+    //% weight=1 blockGap=8
+    export function onMessageReceived(message: string, handler: () => void): void {
+
+    }
+
+    
 } // namespace ButtonMethods
 
-//% color=#5C2D91 weight=900 icon="\uf205"
+//% color=#40BF4A weight=900 icon="\uf205" block="Loops"
 namespace loops {
-    /**
-     * Check if a button is pressed or not.
-     * @param button the button to query the request
-     */
-    //% help=input/button/is-pressed
-    //% block="#%button|is pressed#"
-    //% blockId=buttonIsPressed05
-    //% weight=50 blockGap=8
-    //% trackArgs=0
-    export function isPressed(x: Button): boolean {
-        // return button->isPressed();
-        return true;
-    }
+    // will not change.
 } // namespace ButtonMethods
 
-//% color=#5C2D91 weight=900 icon="\uf205"
+//% color=#4CBFE6 weight=900 icon="\uf205"  block="Logic"
 namespace logic {
-    /**
-     * Check if a button is pressed or not.
-     * @param button the button to query the request
-     */
-    //% help=input/button/is-pressed
-    //% block="#%button|is pressed#"
-    //% blockId=buttonIsPressed06
-    //% weight=50 blockGap=8
-    //% trackArgs=0
-    export function isPressed(x: Button): boolean {
-        // return button->isPressed();
-        return true;
-    }
+    // will not change.
 } // namespace ButtonMethods
