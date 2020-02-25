@@ -6,10 +6,10 @@ namespace basic {
      * @param text text to print
      */
     //% help=basic/print/print
-    //% block="print %text"
-    //% blockId=rcm300print
+    //% block="##print %text"
+    //% blockId=rcm_300print
     //% weight=2 blockGap=8
-    void print(String text) {
+    void printCM300() {
         
     }
 } // namespace basic

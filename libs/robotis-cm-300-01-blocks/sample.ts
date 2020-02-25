@@ -8,7 +8,7 @@ namespace basic {
     //% blockId=cm300_printNum2 block="#print %num"
     //% weight=1 blockGap=8
     export function printNum2(num: number): void {
-        
+        // printCM300();
     }
 
     /**
@@ -338,6 +338,17 @@ namespace output {
     //% position.defl=512 position.min=0 position.max=1024
     //% motorId.defl=1 motorId.min=1 motorId.max=2
     export function setModtorIdPosition(motorId: number, position: number): void {
+
+    }
+
+    /**
+     * Read sound count
+     */
+    //% help=basic/clear-screen weight=1
+    //% blockId=cm300_setModtorIdPosition2 block="#position to %position=protractorPicker"
+    //% weight=1 blockGap=8
+    //% position.defl=512 position.min=0 position.max=1024
+    export function setModtorIdPosition2(position: number): void {
 
     }
 } // namespace ButtonMethods

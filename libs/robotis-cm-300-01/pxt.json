@@ -9,12 +9,12 @@
         "board.svg"
     ],
     "core": true,
-    "compileServiceVariant": "nrf52840",
+    "compileServiceVariant": "cm300",
     "dependencies": {
         "buttons": "file:../buttons",
+        "core---nrf52": "file:../core---nrf52",
         "accelerometer": "file:../accelerometer",
-        "robotis-cm-300-01-blocks": "file:../robotis-cm-300-01-blocks",
-        "core---nrf52": "file:../core---nrf52"
+        "robotis-cm-300-01-blocks": "file:../robotis-cm-300-01-blocks"
     },
     "public": true,
     "dalDTS": {

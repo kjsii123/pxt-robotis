@@ -5,13 +5,13 @@
         "README.md",
         "melodies.ts",
         "music.ts",
-        "sample.cpp",        
         "sample.ts",
+        "sample.cpp",
         "enums.d.ts",
         "shims.d.ts"
     ],
     "testFiles": [
-        "test.ts"
+        
     ],
     "public": true,
     "dependencies": {
