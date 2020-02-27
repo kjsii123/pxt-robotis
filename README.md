@@ -107,7 +107,7 @@ python build.py
 
 ### Running
 
-Run this command from inside pxt-maker to open a local web server
+Run this command from inside pxt-robotis to open a local web server
 ```
 pxt serve
 ```
