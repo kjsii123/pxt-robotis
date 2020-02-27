@@ -1,8 +1,9 @@
-# MakeCode Maker [![Actions Status](https://github.com/microsoft/pxt-maker/workflows/pxt-buildtarget/badge.svg)](https://github.com/microsoft/pxt-maker/actions)
+# MakeCode ROBOTIS [![Actions Status](https://github.com/microsoft/pxt-robotis/workflows/pxt-buildtarget/badge.svg)](https://github.com/microsoft/pxt-robotis/actions)
 
-This is an experimental code editor for maker boards - try it at https://maker.makecode.com.
-
+This is an experimental code editor for maker boards - Not supported yet
 * [Read the docs](https://maker.makecode.com/about)
+
+## [CAUTION] This is a documentation for only developer
 
 ## Who is this for?
 
@@ -34,42 +35,19 @@ cd pxt-common-packages
 npm install
 cd ..
 ```
-6. Clone the ``Microsoft/pxt-maker`` repository
+6. Clone the ``ROBOTIS-GIT/pxt-robotis`` repository
 ```
-git clone https://github.com/microsoft/pxt-maker
-cd pxt-maker
+git clone https://github.com/ROBOTIS-GIT/pxt-robotis
+cd pxt-robotis
 ```
 7. Install the PXT command line (add `sudo` for Mac/Linux shells).
 ```
 npm install -g pxt
 ```
-8. Install the pxt-maker dependencies.
+8. Install the pxt-robotis dependencies.
 ```
 npm install
 ```
-8. Link pxt-maker back to base pxt repo (add `sudo` for Mac/Linux shells).
-```
-rm -Rf node_modules/pxt-core
-rm -Rf node_modules/pxt-common-packages
-pxt link ../pxt
-pxt link ../pxt-common-packages
-```
-
-If you want to know if your folders are link, run ``ls -l``
-and it will indicate them.
-
-```
-ls -l node_modules/
-```
-
-Note the above command assumes the folder structure of   
-```
-       maker.makecode.com
-          |
-  ----------------------------------
-  |       |                        |
- pxt      pxt-common-packages  pxt-maker
- ```
 
 ### Refresh dal.d.ts files
 
@@ -95,7 +73,7 @@ the ``file:...`` path instead of ``*``
 
 ```
    dependencies: {
-        "adafruit-metro-m0-express": "file:../../libs/adafruit-metro-m0-express"
+        "robotis-cm-300": "file:../../libs/robotis-cm-300"
    }
 ```
 * from the command line, set the ``PXT_NODOCKER`` environment variable to ``1``
@@ -151,9 +129,9 @@ The pxt-maker target depends on several other repos. The main ones are:
 - https://github.com/microsoft/pxt, the PXT framework
 - https://github.com/microsoft/pxt-commmon-packages, common APIs accross various MakeCode editors
 - https://github.com/lancaster-university/codal-core, CODAL core project
-- https://github.com/lancaster-university/codal-mbed, mbed layer
-- https://github.com/lancaster-university/codal-samd21, CODAL SAMD21 layer
-- https://github.com/lancaster-university/codal-circuit-playground, Adafruit CPX layer
+- https://github.com/lancaster-university/codal-nrf52, CODAL nRF52 core layer
+- https://github.com/ROBOTIS-GIT/codal-nrf52, CODAL nRF52 core layer (for ROBOTIS)
+- https://github.com/ROBOTIS-GIT/codal-cm300, ROBOTIS CM-300 board layer
 
 ## Code of Conduct
 
