@@ -3,12 +3,15 @@
     "description": "Button A and B drivers",
     "files": [
         "README.md",
+        "enums.d.ts",
+        "shims.d.ts",
         "melodies.ts",
         "music.ts",
-        "sample.ts",
-        "sample.cpp",
-        "enums.d.ts",
-        "shims.d.ts"
+        "basic.cpp",
+        "basic.ts",
+        "input.ts",
+        "output.ts",
+        "communication.ts"
     ],
     "testFiles": [
         
