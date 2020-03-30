@@ -21,5 +21,6 @@
     "screenSize": {
         "width": 160,
         "height": 120
-    }
+    },
+    "hidden": true
 }
