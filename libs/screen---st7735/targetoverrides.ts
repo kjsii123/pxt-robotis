@@ -46,3 +46,18 @@ namespace _screen_internal {
         return img as ScreenImage;
     }
 }
+/**
+ * ROBOTIS's devices
+ */
+//% block="robotiscategory1"
+//% color=#4b6584 weight=89 icon="\uf1bb"
+//% groups='["Screen", "Effects", "Tiles"]'
+namespace robotiscategory1 {
+
+    //% group="Screen"
+    //% weight=24
+    //% blockId=dxl_image_background block="set background image to %img=background_image_picker"
+    export function robotisBackgroundimage(img: Image){
+        
+    }
+}

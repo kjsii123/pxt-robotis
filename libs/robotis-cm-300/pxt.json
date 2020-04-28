@@ -16,7 +16,7 @@
         "serial": "file:../serial",
         "dynamixel": "file:../dynamixel",
         "accelerometer": "file:../accelerometer",
-        "game": "file:../game"
+        "screen---st7735": "file:../screen---st7735"
     },
     "public": true,
     "dalDTS": {
